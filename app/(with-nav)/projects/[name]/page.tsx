@@ -16,7 +16,11 @@ type Props = {
   };
 };
 
-export default async function PostDetail({ params }: Props) {
+export default async function PostDetail({
+  params,
+}: {
+  params: { name: string };
+}) {
   const projectIndex = projects.findIndex((p) => p.name === params.name);
   const project = projects[projectIndex];
 
