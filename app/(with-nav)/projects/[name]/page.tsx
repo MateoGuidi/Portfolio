@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ViewTransition } from "react";
 import { projects, ProjectToSkills } from "@/app/data";
 import { FiExternalLink, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -61,7 +60,7 @@ export default async function PostDetail(props: any) {
                 </Link>
               )}
 
-              <ViewTransition
+              <div
                 name={`post-${0}`}
                 exit="duration-100"
               >
@@ -73,7 +72,7 @@ export default async function PostDetail(props: any) {
                     className="rounded-xl mb-1 object-cover shadow-2xl transition-shadow duration-300"
                   />
                 </div>
-              </ViewTransition>
+              </div>
             </div>
 
             <div className="text-lg text-gray-300 pt-2">

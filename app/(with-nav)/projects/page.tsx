@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link"
 import Image from "next/image"
-import { ViewTransition } from "react"
 import useKonami from 'use-konami';
 import { projects, CategoryToString, CategoryToIcon } from '@/app/data';
 
@@ -11,7 +10,7 @@ export default function PostList() {
   });
   return (
     <>
-      <ViewTransition name="posts" exit="duration-100">
+      <div name="posts" exit="duration-100">
         <div className="px-4 sm:px-6 md:px-0 py-6">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-lg font-medium col-span-full">Projects</div>
@@ -24,7 +23,7 @@ export default function PostList() {
                 href={`/projects/${project.name}`}
                 className="group block rounded-lg overflow-hidden"
               >
-                <ViewTransition
+                <div
                   name={`post-${id}`}
                   exit="duration-100"
                 >
@@ -38,7 +37,7 @@ export default function PostList() {
                       {project.name}
                     </div>
                   </div>
-                </ViewTransition>
+                </div>
                 <div className="mt-2 flex items-center space-x-2 text-sm font-semibold text-white rounded px-2 py-1 shadow-md bg-gray-900/40 w-max">
                   {CategoryToIcon(project.category)}
                   <span>{CategoryToString(project.category)}</span>
@@ -48,7 +47,7 @@ export default function PostList() {
           })}
           </div>
         </div>
-      </ViewTransition>
+      </div>
     </>
   )
 }

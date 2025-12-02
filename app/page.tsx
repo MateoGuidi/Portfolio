@@ -1,5 +1,4 @@
 "use client"
-import { ViewTransition } from "react"
 import { Header } from "@/app/ui/header"
 import Link from "next/link"
 import Image from "next/image"
@@ -12,7 +11,7 @@ export default function Home() {
     onUnlock: () => window.location.href = "https://lemh.fr",
   });
   return (
-    <ViewTransition
+    <div
       name="home"
       enter="page-enter"
       exit="page-exit duration-100"
@@ -20,7 +19,7 @@ export default function Home() {
       <div className="px-4 sm:px-6 md:px-0 grid gap-12 py-12">
         <Header isCollapsed={false} />
 
-        <ViewTransition name="posts" exit="duration-100">
+        <div name="posts" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/skills"
@@ -88,9 +87,9 @@ export default function Home() {
             style={{borderRadius: "0.5rem", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"}}
           />
           </div>
-        </ViewTransition>
+        </div>
 
-        <ViewTransition name="posts" exit="duration-100">
+        <div name="posts" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/projects"
@@ -101,7 +100,7 @@ export default function Home() {
             {Array.from(projects.slice(0, 3)).map((project, index) => {
               const id = index + 1
               return (
-                <ViewTransition
+                <div
                   key={id}
                   name={`post-${id}`}
                 >
@@ -118,15 +117,15 @@ export default function Home() {
                       {project.name}
                     </div>
                     </div></Link>
-                </ViewTransition>
+                </div>
               )
             })}
           </div>
-        </ViewTransition>
+        </div>
       </div>
       <footer className={"justify-self-center text-sm mb-5"}>
           © {new Date().getFullYear()} Matéo GUIDI • All rights reserved
       </footer>
-    </ViewTransition>
+    </div>
   )
 }
