@@ -1,5 +1,4 @@
 "use client"
-import { useState } from "react"
 import { clsx as cx } from "clsx"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,7 +16,6 @@ export function Header({ isCollapsed = false }: HeaderProps) {
         "mt-24": !isCollapsed,
       })}
     >
-      <div>
         <Link href="/" className="mx-auto md:mx-0">
           <Image
             className={cx("rounded-full object-cover transition-all", {
@@ -30,10 +28,8 @@ export function Header({ isCollapsed = false }: HeaderProps) {
             height={130}
           />
         </Link>
-      </div>
 
       <div className="grid gap-2 items-center text-center md:text-left">
-        <div>
           <Link
             href="/"
             className={cx(
@@ -46,7 +42,6 @@ export function Header({ isCollapsed = false }: HeaderProps) {
           >
             Mateo GUIDI
           </Link>
-        </div>
 
         {!isCollapsed ? (
           <div className="text-sm md:text-lg">
@@ -54,7 +49,6 @@ export function Header({ isCollapsed = false }: HeaderProps) {
           </div>
         ) : null}
 
-        <div>
           <div
             className={cx("w-full md:w-fit flex gap-2 items-center justify-center md:justify-start flex-wrap transition-all", {
               "md:col-start-2 md:justify-self-end": isCollapsed,
@@ -65,7 +59,6 @@ export function Header({ isCollapsed = false }: HeaderProps) {
             <NavLink href="/skills">Skills</NavLink>
             <NavLink href="/projects">Projects</NavLink>
           </div>
-        </div>
       </div>
     </div>
   )

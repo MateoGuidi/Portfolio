@@ -43,7 +43,7 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <title></title>
+        <title>Mateo GUIDI's Portfolio</title>
         <link rel="icon" href={favicon.src} sizes="any" />
         <meta property="og:title" content="Mateo GUIDI's Portfolio" />
         <meta property="og:description" content="Take a look on all my skills and my projects." />
