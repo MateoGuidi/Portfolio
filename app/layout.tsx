@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from 'next/script'
 import { Geist } from "next/font/google"
 import "./globals.css"
 import Starfield from "@/app/ui/starfield";
@@ -22,14 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script>
+        <Script>
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-P48WN69R');`}
-        </script>
-        <script id="sw-register" strategy="afterInteractive">
+        </Script>
+        <Script id="sw-register" strategy="afterInteractive">
           {`
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {
@@ -41,7 +42,7 @@ export default function RootLayout({
               });
             }
           `}
-        </script>
+        </Script>
         <title></title>
         <link rel="icon" href={favicon.src} sizes="any" />
         <meta property="og:title" content="Mateo GUIDI's Portfolio" />
