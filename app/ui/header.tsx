@@ -17,7 +17,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
         "mt-24": !isCollapsed,
       })}
     >
-      <div name="header-image">
+      <div>
         <Link href="/" className="mx-auto md:mx-0">
           <Image
             className={cx("rounded-full object-cover transition-all", {
@@ -33,7 +33,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
       </div>
 
       <div className="grid gap-2 items-center text-center md:text-left">
-        <div name="header-title">
+        <div>
           <Link
             href="/"
             className={cx(
@@ -54,10 +54,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
           </div>
         ) : null}
 
-        <div
-          name="header-nav"
-          share="via-blur"
-        >
+        <div>
           <div
             className={cx("w-full md:w-fit flex gap-2 items-center justify-center md:justify-start flex-wrap transition-all", {
               "md:col-start-2 md:justify-self-end": isCollapsed,

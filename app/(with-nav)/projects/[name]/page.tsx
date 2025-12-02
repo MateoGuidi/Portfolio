@@ -60,10 +60,7 @@ export default async function PostDetail(props: any) {
                 </Link>
               )}
 
-              <div
-                name={`post-${0}`}
-                exit="duration-100"
-              >
+              <div>
                 <div className="relative w-full h-44 sm:h-56 md:h-[400px]">
                   <Image
                     src={project.img}

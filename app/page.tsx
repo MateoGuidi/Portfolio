@@ -11,15 +11,11 @@ export default function Home() {
     onUnlock: () => window.location.href = "https://lemh.fr",
   });
   return (
-    <div
-      name="home"
-      enter="page-enter"
-      exit="page-exit duration-100"
-    >
+    <div>
       <div className="px-4 sm:px-6 md:px-0 grid gap-12 py-12">
         <Header isCollapsed={false} />
 
-        <div name="posts" exit="duration-100">
+        <div>
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/skills"
@@ -89,7 +85,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div name="posts" exit="duration-100">
+        <div>
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/projects"
@@ -100,10 +96,7 @@ export default function Home() {
             {Array.from(projects.slice(0, 3)).map((project, index) => {
               const id = index + 1
               return (
-                <div
-                  key={id}
-                  name={`post-${id}`}
-                >
+                <div key={id}>
                   <Link
                     href={`/projects/${project.name}`}
                     className="aspect-video rounded-lg block overflow-hidden"

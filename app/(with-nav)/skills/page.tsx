@@ -11,7 +11,7 @@ export default function PostList() {
   });
   return (
     <>
-      <div name="posts" exit="duration-100">
+      <div>
         <div className="px-4 sm:px-6 md:px-0 py-6">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-lg font-medium col-span-full">Skills</div>
